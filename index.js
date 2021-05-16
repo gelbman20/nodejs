@@ -15,11 +15,24 @@ app.set('views', 'views')
 app.use(express.static('public'))
 
 app.get('/', (req, res, next) => {
-  res.render('index')
+  res.render('index', {
+    title: 'Home page',
+    isHome: true
+  })
 })
 
-app.get('/about', (req, res, next) => {
-  res.render('about')
+app.get('/add', (req, res, next) => {
+  res.render('add', {
+    title: 'Add new course',
+    isAdd: true
+  })
+})
+
+app.get('/courses', (req, res, next) => {
+  res.render('courses', {
+    title: 'Courses',
+    isCourses: true
+  })
 })
 
 const PORT = process.env.PORT || 3000
