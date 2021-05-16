@@ -19,6 +19,7 @@ app.set('views', 'views')
 app.use(express.static('public'))
 
 // Router
+app.use(express.urlencoded({ extended: true }))
 app.use('/', homeRouter)
 app.use('/add', addRouter)
 app.use('/courses', coursesRouter)
