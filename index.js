@@ -4,6 +4,7 @@ const exphbs = require('express-handlebars')
 const homeRouter = require('./routes/home')
 const addRouter = require('./routes/add')
 const coursesRouter = require('./routes/courses')
+const cardRouter = require('./routes/card')
 
 const app = express()
 
@@ -23,8 +24,9 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/', homeRouter)
 app.use('/add', addRouter)
 app.use('/courses', coursesRouter)
+app.use('/card', cardRouter)
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 8080
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`)
