@@ -1,1 +1,1 @@
-{"courses":[{"title":"Angular","price":"555","image":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png","id":"ade4d165-728f-429b-87ab-82f32ab88a16","count":2}],"price":1110}
+{"courses":[{"title":"Angular","price":"555","image":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png","id":"ade4d165-728f-429b-87ab-82f32ab88a16","count":2},{"id":"93239f2f-899e-4950-bf86-feda74ea6f29","title":"123","price":"123","image":"123","count":1}],"price":1233}
