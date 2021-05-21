@@ -30,7 +30,7 @@ app.use('/card', cardRouter)
 
 async function start () {
   try {
-    const url = `mongodb+srv://gelbman20:GjRc5ZxLNoIECICA@cluster0.peicj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+    const url = `mongodb+srv://gelbman20:GjRc5ZxLNoIECICA@cluster0.peicj.mongodb.net/shop`
     await mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`)
@@ -41,7 +41,5 @@ async function start () {
 }
 
 start()
-  .then(() => {
-    console.log('contected')
-  })
+  .then()
   .catch()
