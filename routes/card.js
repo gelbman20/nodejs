@@ -19,4 +19,10 @@ router.get('/', async (req, res) => {
   })
 })
 
+router.delete('/delete/:id', async (req, res) => {
+  const id = req.params.id
+  const card = await Card.delete(id)
+  res.status(200).json(card)
+})
+
 module.exports = router

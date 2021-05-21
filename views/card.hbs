@@ -1,35 +1,37 @@
 <div class="container">
   <h1>Card</h1>
-  {{#if courses.length}}
-    <table>
-      <thead>
+  <div id="card">
+    {{#if courses.length}}
+      <table>
+        <thead>
         <tr>
           <th>Name</th>
           <th>Count</th>
           <th>Action</th>
         </tr>
-      </thead>
-      <tbody>
+        </thead>
+        <tbody>
         {{#each courses}}
           <tr>
-            <td>{{title}}</td>
-            <td>{{count}}</td>
+            <td>{{ title }}</td>
+            <td>{{ count }}</td>
             <td>
-              <button class="btn btn-small">delete</button>
+              <button data-id="{{ id }}" class="btn-delete btn btn-small">delete</button>
             </td>
           </tr>
         {{/each}}
-      </tbody>
-    </table>
-    <p>
-      <strong>
-        Price
-      </strong>
-      <span class="price">
-        {{ price }}
-      </span>
-    </p>
-  {{else}}
-    <p>Card is empty</p>
-  {{/if}}
+        </tbody>
+      </table>
+      <p id="price">
+        <strong>
+          Price
+        </strong>
+        <span class="price">
+          {{ price }}
+        </span>
+      </p>
+    {{else}}
+      <p>Card is empty</p>
+    {{/if}}
+  </div>
 </div>
