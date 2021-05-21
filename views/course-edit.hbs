@@ -18,6 +18,11 @@
       <span class="helper-text" data-error="Input url"></span>
     </div>
     <input type="hidden" name="id" value="{{ course.id }}">
-    <button class="btn btn-primary">Update Course</button>
+    <button type="submit" class="btn btn-primary">Update Course</button>
+  </form>
+
+  <form style="margin-top: 10px" action="/courses/remove" method="POST">
+    <input type="hidden" name="id" value="{{ course.id }}">
+    <button type="submit" class="btn red">Delete Course</button>
   </form>
 </div>
