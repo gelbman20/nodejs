@@ -7,6 +7,7 @@ const homeRouter = require('./routes/home')
 const addRouter = require('./routes/add')
 const coursesRouter = require('./routes/courses')
 const cardRouter = require('./routes/card')
+const ordersRouter = require('./routes/orders')
 const User = require('./models/user')
 
 const PORT = process.env.PORT || 8080
@@ -39,6 +40,7 @@ app.use('/', homeRouter)
 app.use('/add', addRouter)
 app.use('/courses', coursesRouter)
 app.use('/card', cardRouter)
+app.use('/orders', ordersRouter)
 
 async function start () {
   try {
