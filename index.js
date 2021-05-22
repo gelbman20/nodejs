@@ -1,5 +1,4 @@
 const express = require('express')
-const path = require('path')
 const mongoose = require('mongoose')
 const exphbs = require('express-handlebars')
 const Handlebars = require('handlebars')
@@ -8,6 +7,7 @@ const homeRouter = require('./routes/home')
 const addRouter = require('./routes/add')
 const coursesRouter = require('./routes/courses')
 const cardRouter = require('./routes/card')
+const User = require('./models/user')
 
 const PORT = process.env.PORT || 8080
 const app = express()
@@ -22,6 +22,15 @@ app.engine('hbs', hbs.engine)
 app.set('view engine', 'hbs')
 app.set('views', 'views')
 
+app.use(async (req, res, next) => {
+  try {
+    req.user = await User.findById('60a8f09dbca8cf376ccdae3a')
+    next()
+  } catch (e) {
+    console.log(e)
+  }
+})
+
 app.use(express.static('public'))
 
 // Router
@@ -35,6 +44,15 @@ async function start () {
   try {
     const url = `mongodb+srv://gelbman20:GjRc5ZxLNoIECICA@cluster0.peicj.mongodb.net/shop`
     await mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
+    const candidate = await User.findOne()
+    if (!candidate) {
+      const user = new User({
+        email: 'gelbman20@gmail.com',
+        name: 'Andrii',
+        cart: { items: [] }
+      })
+      await user.save()
+    }
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`)
     })
